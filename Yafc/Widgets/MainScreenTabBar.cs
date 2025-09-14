@@ -48,7 +48,7 @@ public class MainScreenTabBar {
                 }
 
                 gui.BuildText(page.name);
-                if (gui.BuildButton(Icon.Close, size: 0.8f)) {
+                if (gui.BuildButton(Icon.Close, size: 0.8f).WithTooltip(gui, LSs.TooltipClosePage)) {
                     if (isActive || isSecondary) {
                         changePageTo = prevPage;
                         changePage = isActive ? 1 : 2;
