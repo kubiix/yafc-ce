@@ -79,12 +79,7 @@ public partial class MainScreen : WindowMain, IKeyboardFocus, IProgress<(string,
         this.project = project;
         if (project.justCreated) {
             _ = ShowPseudoScreen(new MilestonesPanel());
-        }
-
-        project.AssureFirstPage();
-
-        if (project.displayPages.Count == 0) {
-            project.displayPages.Add(project.pages[0].guid);
+            project.AssureFirstPage();
         }
 
         // Hack to activate all page solvers for the summary view

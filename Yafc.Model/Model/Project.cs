@@ -50,6 +50,8 @@ public class Project : ModelObject {
             ProjectPage firstPage = new ProjectPage(this, typeof(ProductionTable));
             pages.Add(firstPage);
             pagesByGuid[firstPage.guid] = firstPage;
+
+            displayPages.Add(firstPage.guid);
         }
     }
 
