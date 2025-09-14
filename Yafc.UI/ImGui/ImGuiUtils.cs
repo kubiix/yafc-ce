@@ -218,6 +218,14 @@ public static class ImGuiUtils {
         return gui.BuildButton(gui.lastRect, normal, over, down);
     }
 
+    public static bool WithTooltipConditional(this ButtonEvent evt, bool condition, ImGui gui, string tooltip, Rect? rect = null) {
+        if (evt == ButtonEvent.MouseOver && condition) {
+            gui.ShowTooltip(rect ?? gui.lastRect, tooltip);
+        }
+
+        return evt;
+    }
+
     public static bool WithTooltip(this ButtonEvent evt, ImGui gui, string tooltip, Rect? rect = null) {
         if (evt == ButtonEvent.MouseOver) {
             gui.ShowTooltip(rect ?? gui.lastRect, tooltip);
