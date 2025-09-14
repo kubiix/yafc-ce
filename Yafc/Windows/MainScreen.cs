@@ -81,10 +81,7 @@ public partial class MainScreen : WindowMain, IKeyboardFocus, IProgress<(string,
             _ = ShowPseudoScreen(new MilestonesPanel());
         }
 
-        if (project.pages.Count == 0) {
-            ProjectPage firstPage = new ProjectPage(project, typeof(ProductionTable));
-            project.pages.Add(firstPage);
-        }
+        project.AssureFirstPage();
 
         if (project.displayPages.Count == 0) {
             project.displayPages.Add(project.pages[0].guid);
